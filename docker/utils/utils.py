@@ -65,9 +65,6 @@ def compare_version(v1, v2):
     """
     s1 = StrictVersion(v1)
     s2 = StrictVersion(v2)
-    print("I_need_my_version:")
-    print(s1)
-    print(s2)
     if s1 == s2:
         return 0
     elif s1 > s2:
