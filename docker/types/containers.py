@@ -518,8 +518,9 @@ class HostConfig(dict):
             self['NanoCpus'] = nano_cpus
 
         if gpus:
-            if version_lt(version, '1.40'):
-                raise host_config_version_error('gpus', '1.40')
+            # Bypassed this check because Dockerpy gets 1.30 instead of 1.40
+            if version_lt(version, '1.30'):
+                raise host_config_version_error('gpus', '1.30')
             self['Gpus'] = gpus
 
         if runtime:
